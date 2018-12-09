@@ -1,0 +1,37 @@
+Format: 1.8
+Date: Sun, 09 Dec 2018 22:44:18 +0100
+Source: libjsoncpp
+Binary: libjsoncpp1 libjsoncpp-doc libjsoncpp-dev
+Built-For-Profiles: nobiarch nocheck nodoc
+Architecture: amd64 all
+Version: 1.8.4-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Peter Spiess-Knafl <dev@spiessknafl.at>
+Changed-By: Richard Yang <richard@yenforyang.com>
+Description:
+ libjsoncpp-dev - library for reading and writing JSON for C++ (devel files)
+ libjsoncpp-doc - API documentation for libjsoncpp-dev
+ libjsoncpp1 - library for reading and writing JSON for C++
+Changes:
+ libjsoncpp (1.8.4-1) UNRELEASED; urgency=medium
+ .
+   * New upstream release
+Checksums-Sha1:
+ 98edf4d2092a790d610ecb3c53410aa0631669d9 2157944 libjsoncpp-dev_1.8.4-1_amd64.deb
+ 1ed935ebc120cbc379dd8afc5e868d58542d86db 220400 libjsoncpp-doc_1.8.4-1_all.deb
+ ea28e9b34cc03d5e4d1d903d05bf67404c9940d4 416008 libjsoncpp1-dbgsym_1.8.4-1_amd64.deb
+ 5f21089978d83160a4be0912cc1bd4c8a35b48a4 124660 libjsoncpp1_1.8.4-1_amd64.deb
+ a6265b22689d7b570d2f8d3a9b3646569c1324eb 7114 libjsoncpp_1.8.4-1_amd64.buildinfo
+Checksums-Sha256:
+ 3f3ab9c65efc4f6fc6e28bd92f68245b7b3b5ac2c88c77456c6b09832ce1c19d 2157944 libjsoncpp-dev_1.8.4-1_amd64.deb
+ 087d1c4a98adc38a2ed710534d6c6fb2ece5ae1862d6848f13cc4a2cc2d243af 220400 libjsoncpp-doc_1.8.4-1_all.deb
+ 3cf0004ba53270fb98a198d32c5035764612269ebbebaf49c703d332c02064a9 416008 libjsoncpp1-dbgsym_1.8.4-1_amd64.deb
+ cba78f96c0c7c666e6050bd973f28c401e0a37f05a15eb25cc60381bbe119faf 124660 libjsoncpp1_1.8.4-1_amd64.deb
+ 889b3a7ae237bfae2cd3f9469365e321995c051b127b83b0d983e9c173efb159 7114 libjsoncpp_1.8.4-1_amd64.buildinfo
+Files:
+ 10425937427410339a03a6011a9a2efa 2157944 libdevel extra libjsoncpp-dev_1.8.4-1_amd64.deb
+ d1905aa668cc166ad250754632344a60 220400 doc extra libjsoncpp-doc_1.8.4-1_all.deb
+ 4be490acced14d06111a007c218493ac 416008 debug optional libjsoncpp1-dbgsym_1.8.4-1_amd64.deb
+ 29b426d542a47d6168d60a614b5418f6 124660 libs extra libjsoncpp1_1.8.4-1_amd64.deb
+ d29b567a3ac76582150ce7a30a585ca9 7114 libs extra libjsoncpp_1.8.4-1_amd64.buildinfo

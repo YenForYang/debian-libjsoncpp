@@ -1,0 +1,716 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck,nodoc
+dpkg-buildpackage: info: source package libjsoncpp
+dpkg-buildpackage: info: source version 1.8.4-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Richard Yang <richard@yenforyang.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --parallel --buildsystem=cmake
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4'
+dh_auto_clean
+rm -rf dist
+rm -f devtools/*.pyc
+rm -f doc/doxyfile
+rm -f doc/*.db
+make[1]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4'
+   dh_clean -O--parallel -O--buildsystem=cmake
+FAKEROOTKEY=528357390 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules clean
+ debian/rules build
+dh build --parallel --buildsystem=cmake
+   dh_update_autotools_config -O--parallel -O--buildsystem=cmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4'
+dh_auto_configure -- \
+		-DBUILD_SHARED_LIBS=ON \
+		-DBUILD_STATIC_LIBS=ON \
+		-DJSONCPP_WITH_CMAKE_PACKAGE=ON \
+		-DLIB_SUFFIX="/x86_64-linux-gnu" \
+		-DINCLUDE_INSTALL_DIR=/usr/include/jsoncpp \
+		-DJSONCPP_WITH_TESTS=Off
+	cd obj-x86_64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_C_COMPILER=icc -DCMAKE_CXX_COMPILER=icpc -DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu -DBUILD_SHARED_LIBS=ON -DBUILD_STATIC_LIBS=ON -DJSONCPP_WITH_CMAKE_PACKAGE=ON -DLIB_SUFFIX=/x86_64-linux-gnu -DINCLUDE_INSTALL_DIR=/usr/include/jsoncpp -DJSONCPP_WITH_TESTS=Off ..
+-- The C compiler identification is Intel 19.0.0.20181018
+-- The CXX compiler identification is Intel 19.0.0.20181018
+-- Check for working C compiler: /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icc
+-- Check for working C compiler: /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc
+-- Check for working CXX compiler: /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- JsonCpp Version: 1.8.4
+-- Looking for C++ include clocale
+-- Looking for C++ include clocale - found
+-- Looking for localeconv
+-- Looking for localeconv - found
+-- Looking for C++ include sys/types.h
+-- Looking for C++ include sys/types.h - found
+-- Looking for C++ include stdint.h
+-- Looking for C++ include stdint.h - found
+-- Looking for C++ include stddef.h
+-- Looking for C++ include stddef.h - found
+-- Check size of lconv
+-- Check size of lconv - done
+-- Performing Test HAVE_DECIMAL_POINT
+-- Performing Test HAVE_DECIMAL_POINT - Success
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    INCLUDE_INSTALL_DIR
+    LIB_SUFFIX
+
+
+-- Build files have been written to: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu
+make[1]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4'
+   debian/rules override_dh_auto_build-indep
+make[1]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4'
+python doxybuild.py --doxygen=/usr/bin/doxygen
+Deleting directory: dist/doxygen
+Running: u'/usr/bin/doxygen /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc/doxyfile' in '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc'
+warning: Tag `XML_SCHEMA' at line 1805 of file `/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc/doxyfile' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+warning: Tag `XML_DTD' at line 1811 of file `/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc/doxyfile' has become obsolete.
+         To avoid this warning please remove this line from your configuration file or upgrade it using "doxygen -u"
+warning: doxygen no longer ships with the FreeSans font.
+You may want to clear or change DOT_FONTNAME.
+Otherwise you run the risk that the wrong font is being used for dot generated graphs.
+Searching for include files...
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json
+Searching for example files...
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/patches
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/source
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tests
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/upstream
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/devtools
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/dist
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/dist/doxygen
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/dist/doxygen/jsoncpp-api-html-1.8.4
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/makefiles
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/makefiles/msvc2010
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/makefiles/vs71
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/3.13.1
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/3.13.1/CompilerIdC
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/3.13.1/CompilerIdC/tmp
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/3.13.1/CompilerIdCXX
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/3.13.1/CompilerIdCXX/tmp
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/CheckTypeSize
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/Export
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/Export/lib
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/Export/lib/x86_64-linux-gnu
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/Export/lib/x86_64-linux-gnu/cmake
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/Export/lib/x86_64-linux-gnu/cmake/jsoncpp
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/include
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/include/CMakeFiles
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/pkg-config
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/CMakeFiles
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json/CMakeFiles
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json/CMakeFiles/jsoncpp_lib.dir
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json/CMakeFiles/jsoncpp_lib_static.dir
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/pkg-config
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/jsontestrunner
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/test_lib_json
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/test
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/test/data
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/test/jsonchecker
+Searching for images...
+Searching for dot files...
+Searching for msc files...
+Searching for dia files...
+Searching for files to exclude
+Searching INPUT for files to process...
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json
+Searching for files in directory /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc
+Reading and parsing tag files
+Parsing files
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/allocator.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/allocator.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/assertions.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/assertions.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/autolink.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/autolink.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/config.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/config.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/features.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/features.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/forwards.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/forwards.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/json.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/json.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/reader.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/reader.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/value.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/value.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/version.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/version.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/writer.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/writer.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_reader.cpp...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_reader.cpp...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_tool.h...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_tool.h...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_valueiterator.inl...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_valueiterator.inl...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc/jsoncpp.dox...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc/jsoncpp.dox...
+Preprocessing /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc/roadmap.dox...
+Parsing file /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/doc/roadmap.dox...
+Building group list...
+Building directory list...
+Building namespace list...
+Building file list...
+Building class list...
+Associating documentation with classes...
+Computing nesting relations for classes...
+Building example list...
+Searching for enumerations...
+Searching for documented typedefs...
+Searching for members imported via using declarations...
+Searching for included using directives...
+Searching for documented variables...
+Building interface member list...
+Building member list...
+Searching for friends...
+Searching for documented defines...
+Computing class inheritance relations...
+Computing class usage relations...
+Flushing cached template relations that have become invalid...
+Computing class relations...
+Add enum values to enums...
+Searching for member function documentation...
+Creating members for template instances...
+Building page list...
+Search for main page...
+Computing page relations...
+Determining the scope of groups...
+Sorting lists...
+Freeing entry tree
+Determining which enums are documented
+Computing member relations...
+Building full member lists recursively...
+Adding members to member groups.
+Computing member references...
+Inheriting documentation...
+Generating disk names...
+Adding source references...
+Adding xrefitems...
+Sorting member lists...
+Computing dependencies between directories...
+Generating citations page...
+Counting data structures...
+Resolving user defined references...
+Finding anchors and sections in the documentation...
+Transferring function references...
+Combining using relations...
+Adding members to index pages...
+Generating style sheet...
+Generating search indices...
+Generating example documentation...
+Generating file sources...
+Parsing code for file doc/jsoncpp.dox...
+Parsing code for file doc/roadmap.dox...
+Generating code for file include/json/allocator.h...
+Generating code for file include/json/assertions.h...
+Generating code for file include/json/autolink.h...
+Generating code for file include/json/config.h...
+Generating code for file include/json/features.h...
+Generating code for file include/json/forwards.h...
+Generating code for file include/json/json.h...
+Generating code for file include/json/reader.h...
+Generating code for file include/json/value.h...
+Generating code for file include/json/version.h...
+Generating code for file include/json/writer.h...
+Generating code for file src/lib_json/json_reader.cpp...
+Generating code for file src/lib_json/json_tool.h...
+Generating code for file src/lib_json/json_value.cpp...
+Generating code for file src/lib_json/json_valueiterator.inl...
+Generating code for file src/lib_json/json_writer.cpp...
+Generating file documentation...
+Generating docs for file doc/jsoncpp.dox...
+Generating docs for file doc/roadmap.dox...
+Generating docs for file include/json/allocator.h...
+Generating docs for file include/json/assertions.h...
+Generating docs for file include/json/autolink.h...
+Generating docs for file include/json/config.h...
+Generating docs for file include/json/features.h...
+Generating docs for file include/json/forwards.h...
+Generating docs for file include/json/json.h...
+Generating docs for file include/json/reader.h...
+Generating docs for file include/json/value.h...
+Generating docs for file include/json/version.h...
+Generating docs for file include/json/writer.h...
+Generating docs for file src/lib_json/json_reader.cpp...
+Generating docs for file src/lib_json/json_tool.h...
+Generating docs for file src/lib_json/json_value.cpp...
+Generating docs for file src/lib_json/json_valueiterator.inl...
+Generating docs for file src/lib_json/json_writer.cpp...
+Generating page documentation...
+Generating docs for page roadmap...
+Generating docs for page deprecated...
+Generating group documentation...
+Generating class documentation...
+Generating namespace index...
+Generating docs for namespace Json
+Generating docs for compound Json::CharReader...
+Generating docs for nested compound Json::CharReader::Factory...
+Generating docs for compound Json::CharReaderBuilder...
+Generating docs for compound Json::Exception...
+Generating docs for compound Json::FastWriter...
+Generating docs for compound Json::Features...
+Generating docs for compound Json::LogicError...
+Generating docs for compound Json::Path...
+Generating docs for compound Json::PathArgument...
+Generating docs for compound Json::Reader...
+Generating docs for nested compound Json::Reader::StructuredError...
+Generating docs for compound Json::RuntimeError...
+Generating docs for compound Json::SecureAllocator...
+Generating docs for nested compound Json::SecureAllocator::rebind...
+Generating docs for compound Json::StaticString...
+Generating docs for compound Json::StreamWriter...
+Generating docs for nested compound Json::StreamWriter::Factory...
+Generating docs for compound Json::StreamWriterBuilder...
+Generating docs for compound Json::StyledStreamWriter...
+Generating docs for compound Json::StyledWriter...
+Generating docs for compound Json::Value...
+Generating docs for compound Json::ValueConstIterator...
+Generating docs for compound Json::ValueIterator...
+Generating docs for compound Json::ValueIteratorBase...
+Generating docs for compound Json::Writer...
+Generating graph info page...
+Generating directory documentation...
+Generating index page...
+Generating page index...
+Generating module index...
+Generating namespace index...
+Generating namespace member index...
+Generating annotated compound index...
+Generating alphabetical compound index...
+Generating hierarchical class index...
+Generating member index...
+Generating file index...
+Generating file member index...
+Generating example index...
+finalizing index lists...
+writing tag file...
+lookup cache used 1930/65536 hits=25863 misses=2120
+finished...
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/value.h:87: warning: Found ';' while parsing initializer list! (doxygen could be confused by a macro call without semicolon)
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/value.h:89: warning: Found ';' while parsing initializer list! (doxygen could be confused by a macro call without semicolon)
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:257: warning: documented symbol `Json::Value::CZString::CZString' was not declared or defined.
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:259: warning: documented symbol `Json::Value::CZString::CZString' was not declared or defined.
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:266: warning: documented symbol `Json::Value::CZString::CZString' was not declared or defined.
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:284: warning: documented symbol `Json::Value::CZString::~CZString' was not declared or defined.
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:290: warning: no matching class member found for 
+  void Json::Value::CZString::swap(CZString &other)
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:295: warning: no uniquely matching class member found for 
+  Value::CZString & Json::Value::CZString::operator=(const CZString &other)
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:310: warning: no matching class member found for 
+  bool Json::Value::CZString::operator<(const CZString &other) const
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:324: warning: no uniquely matching class member found for 
+  bool Json::Value::CZString::operator==(const CZString &other) const
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:336: warning: no matching class member found for 
+  ArrayIndex Json::Value::CZString::index() const
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:339: warning: documented symbol `const char * Json::Value::CZString::data' was not declared or defined.
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:340: warning: documented symbol `unsigned Json::Value::CZString::length' was not declared or defined.
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp:341: warning: documented symbol `bool Json::Value::CZString::isStaticString' was not declared or defined.
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/value.h:172: warning: explicit link request to 'CharReader' could not be resolved
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/value.h:503: warning: The following parameters of Json::Value::get(const std::string &key, const Value &defaultValue) const are not documented:
+  parameter 'defaultValue'
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include/json/value.h:538: warning: The following parameters of Json::Value::removeMember(std::string const &key, Value *removed) are not documented:
+  parameter 'removed'
+
+Generated documentation can be found in:
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/dist/doxygen/jsoncpp-api-html-1.8.4/index.html
+make[1]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4'
+   dh_auto_build -O--parallel -O--buildsystem=cmake -Nlibjsoncpp-doc
+	cd obj-x86_64-linux-gnu && make -j8
+make[1]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+/usr/bin/cmake -S/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4 -B/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make -f src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/build.make src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/depend
+make -f src/lib_json/CMakeFiles/jsoncpp_lib.dir/build.make src/lib_json/CMakeFiles/jsoncpp_lib.dir/depend
+make[3]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4 /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4 /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json/CMakeFiles/jsoncpp_lib.dir/DependInfo.cmake --color=
+Scanning dependencies of target jsoncpp_lib
+make[3]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make -f src/lib_json/CMakeFiles/jsoncpp_lib.dir/build.make src/lib_json/CMakeFiles/jsoncpp_lib.dir/build
+Scanning dependencies of target jsoncpp_lib_static
+make[3]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make -f src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/build.make src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/build
+make[3]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make[3]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+[ 12%] Building CXX object src/lib_json/CMakeFiles/jsoncpp_lib.dir/json_reader.cpp.o
+[ 25%] Building CXX object src/lib_json/CMakeFiles/jsoncpp_lib.dir/json_value.cpp.o
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc  -DJSON_DLL_BUILD -Djsoncpp_lib_EXPORTS -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/../../include  -g -O2 -fdebug-prefix-map=/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wconversion -Wshadow -Wextra -Werror=conversion -pedantic -fPIC   -std=c++11 -o CMakeFiles/jsoncpp_lib.dir/json_reader.cpp.o -c /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_reader.cpp
+[ 37%] Building CXX object src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/json_reader.cpp.o
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc  -DJSON_DLL_BUILD -Djsoncpp_lib_EXPORTS -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/../../include  -g -O2 -fdebug-prefix-map=/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wconversion -Wshadow -Wextra -Werror=conversion -pedantic -fPIC   -std=c++11 -o CMakeFiles/jsoncpp_lib.dir/json_value.cpp.o -c /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp
+[ 50%] Building CXX object src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/json_value.cpp.o
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc  -DJSON_DLL_BUILD -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/../../include  -g -O2 -fdebug-prefix-map=/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wconversion -Wshadow -Wextra -Werror=conversion -pedantic   -std=c++11 -o CMakeFiles/jsoncpp_lib_static.dir/json_reader.cpp.o -c /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_reader.cpp
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc  -DJSON_DLL_BUILD -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/../../include  -g -O2 -fdebug-prefix-map=/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wconversion -Wshadow -Wextra -Werror=conversion -pedantic   -std=c++11 -o CMakeFiles/jsoncpp_lib_static.dir/json_value.cpp.o -c /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp
+[ 62%] Building CXX object src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/json_writer.cpp.o
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc  -DJSON_DLL_BUILD -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/../../include  -g -O2 -fdebug-prefix-map=/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wconversion -Wshadow -Wextra -Werror=conversion -pedantic   -std=c++11 -o CMakeFiles/jsoncpp_lib_static.dir/json_writer.cpp.o -c /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp
+[ 75%] Building CXX object src/lib_json/CMakeFiles/jsoncpp_lib.dir/json_writer.cpp.o
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc  -DJSON_DLL_BUILD -Djsoncpp_lib_EXPORTS -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/include -I/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/../../include  -g -O2 -fdebug-prefix-map=/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wconversion -Wshadow -Wextra -Werror=conversion -pedantic -fPIC   -std=c++11 -o CMakeFiles/jsoncpp_lib.dir/json_writer.cpp.o -c /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp
+In file included from /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(8):
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_tool.h(81): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      *--current = static_cast<char>(value % 10U + static_cast<unsigned>('0'));
+                   ^
+
+In file included from /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(8):
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_tool.h(81): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      *--current = static_cast<char>(value % 10U + static_cast<unsigned>('0'));
+                   ^
+
+In file included from /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_reader.cpp(11):
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_tool.h(81): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      *--current = static_cast<char>(value % 10U + static_cast<unsigned>('0'));
+                   ^
+
+In file included from /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_reader.cpp(11):
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_tool.h(81): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      *--current = static_cast<char>(value % 10U + static_cast<unsigned>('0'));
+                   ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(144): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      *length = static_cast<unsigned>(strlen(prefixed));
+                ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(144): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      *length = static_cast<unsigned>(strlen(prefixed));
+                ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(326): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    return valueToQuotedStringN(value, static_cast<unsigned int>(strlen(value)));
+                                       ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(375): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      if (ok) document_ += valueToQuotedStringN(str, static_cast<unsigned>(end-str));
+                                                     ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(412): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    value_.string_ = duplicateAndPrefixStringValue(value, static_cast<unsigned>(strlen(value)));
+                                                          ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(399): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        document_ += valueToQuotedStringN(name.data(), static_cast<unsigned>(name.length()));
+                                                       ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(418): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        duplicateAndPrefixStringValue(beginValue, static_cast<unsigned>(endValue - beginValue));
+                                                  ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(424): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        duplicateAndPrefixStringValue(value.data(), static_cast<unsigned>(value.length()));
+                                                    ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(445): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      if (ok) pushValue(valueToQuotedStringN(str, static_cast<unsigned>(end-str)));
+                                                  ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(546): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        lineLength += static_cast<ArrayIndex>(childValues_[index].length());
+                      ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(326): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    return valueToQuotedStringN(value, static_cast<unsigned int>(strlen(value)));
+                                       ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(662): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      if (ok) pushValue(valueToQuotedStringN(str, static_cast<unsigned>(end-str)));
+                                                  ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_reader.cpp(1103): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    if (static_cast<int>(nodes_.size()) > features_.stackLimit_) throwRuntimeError("Exceeded stackLimit in readValue().");
+        ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(375): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      if (ok) document_ += valueToQuotedStringN(str, static_cast<unsigned>(end-str));
+                                                     ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(765): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        lineLength += static_cast<ArrayIndex>(childValues_[index].length());
+                      ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(399): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        document_ += valueToQuotedStringN(name.data(), static_cast<unsigned>(name.length()));
+                                                       ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(445): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      if (ok) pushValue(valueToQuotedStringN(str, static_cast<unsigned>(end-str)));
+                                                  ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(412): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    value_.string_ = duplicateAndPrefixStringValue(value, static_cast<unsigned>(strlen(value)));
+                                                          ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(418): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        duplicateAndPrefixStringValue(beginValue, static_cast<unsigned>(endValue - beginValue));
+                                                  ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(424): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        duplicateAndPrefixStringValue(value.data(), static_cast<unsigned>(value.length()));
+                                                    ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(546): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        lineLength += static_cast<ArrayIndex>(childValues_[index].length());
+                      ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(1062): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        key, static_cast<unsigned>(strlen(key)), CZString::noDuplication); // NOTE!
+             ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(943): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      if (ok) pushValue(valueToQuotedStringN(str, static_cast<unsigned>(end-str)));
+                                                  ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(1082): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        key, static_cast<unsigned>(cend-key), CZString::duplicateOnCopy);
+             ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(965): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+          writeWithIndent(valueToQuotedStringN(name.data(), static_cast<unsigned>(name.length())));
+                                                            ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(1106): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    CZString actualKey(key, static_cast<unsigned>(cend-key), CZString::noDuplication);
+                            ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(1174): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    CZString actualKey(key, static_cast<unsigned>(cend-key), CZString::noDuplication);
+                            ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(662): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      if (ok) pushValue(valueToQuotedStringN(str, static_cast<unsigned>(end-str)));
+                                                  ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(1048): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        lineLength += static_cast<ArrayIndex>(childValues_[index].length());
+                      ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(765): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        lineLength += static_cast<ArrayIndex>(childValues_[index].length());
+                      ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(943): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+      if (ok) pushValue(valueToQuotedStringN(str, static_cast<unsigned>(end-str)));
+                                                  ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(965): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+          writeWithIndent(valueToQuotedStringN(name.data(), static_cast<unsigned>(name.length())));
+                                                            ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_writer.cpp(1048): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        lineLength += static_cast<ArrayIndex>(childValues_[index].length());
+                      ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(1062): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        key, static_cast<unsigned>(strlen(key)), CZString::noDuplication); // NOTE!
+             ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(1082): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+        key, static_cast<unsigned>(cend-key), CZString::duplicateOnCopy);
+             ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(1106): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    CZString actualKey(key, static_cast<unsigned>(cend-key), CZString::noDuplication);
+                            ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_value.cpp(1174): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    CZString actualKey(key, static_cast<unsigned>(cend-key), CZString::noDuplication);
+                            ^
+
+/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json/json_reader.cpp(1103): warning #1682: implicit conversion of a 64-bit integral type to a smaller integral type (potential portability problem)
+    if (static_cast<int>(nodes_.size()) > features_.stackLimit_) throwRuntimeError("Exceeded stackLimit in readValue().");
+        ^
+
+[ 87%] Linking CXX static library libjsoncpp_static.a
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /usr/bin/cmake -P CMakeFiles/jsoncpp_lib_static.dir/cmake_clean_target.cmake
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /usr/bin/cmake -E cmake_link_script CMakeFiles/jsoncpp_lib_static.dir/link.txt --verbose=1
+/usr/bin/ar qc libjsoncpp_static.a  CMakeFiles/jsoncpp_lib_static.dir/json_reader.cpp.o CMakeFiles/jsoncpp_lib_static.dir/json_value.cpp.o CMakeFiles/jsoncpp_lib_static.dir/json_writer.cpp.o
+/usr/bin/ranlib libjsoncpp_static.a
+make[3]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+[ 87%] Built target jsoncpp_lib_static
+[100%] Linking CXX shared library libjsoncpp.so
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /usr/bin/cmake -E cmake_link_script CMakeFiles/jsoncpp_lib.dir/link.txt --verbose=1
+/opt/intel/compilers_and_libraries/linux/pkg_bin/intel64/icpc -fPIC -g -O2 -fdebug-prefix-map=/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wconversion -Wshadow -Wextra -Werror=conversion -pedantic -Wl,-z,relro -Wl,--as-needed,--gc-sections,--relax -shared -Wl,-soname,libjsoncpp.so.19 -o libjsoncpp.so.1.8.4 CMakeFiles/jsoncpp_lib.dir/json_reader.cpp.o CMakeFiles/jsoncpp_lib.dir/json_value.cpp.o CMakeFiles/jsoncpp_lib.dir/json_writer.cpp.o 
+ipo: remark #11000: performing multi-file optimizations
+ipo: remark #11074: Inlining inhibited by limit max-size 
+ipo: remark #11074: Inlining inhibited by limit max-total-size 
+ipo: remark #11076: To get full report use -qopt-report=4 -qopt-report-phase ipo
+ipo: remark #11006: generating object file /tmp/ipo_icpcSOTeex.o
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json && /usr/bin/cmake -E cmake_symlink_library libjsoncpp.so.1.8.4 libjsoncpp.so.19 libjsoncpp.so
+make[3]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+[100%] Built target jsoncpp_lib
+make[2]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+   dh_auto_test -O--parallel -O--buildsystem=cmake
+ fakeroot debian/rules binary
+dh binary --parallel --buildsystem=cmake
+   dh_auto_test -O--parallel -O--buildsystem=cmake
+   dh_testroot -O--parallel -O--buildsystem=cmake
+   dh_prep -O--parallel -O--buildsystem=cmake
+   dh_installdirs -O--parallel -O--buildsystem=cmake
+   dh_auto_install -O--parallel -O--buildsystem=cmake
+	cd obj-x86_64-linux-gnu && make -j8 install DESTDIR=/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+/usr/bin/cmake -S/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4 -B/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make -f src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/build.make src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/depend
+make -f src/lib_json/CMakeFiles/jsoncpp_lib.dir/build.make src/lib_json/CMakeFiles/jsoncpp_lib.dir/depend
+make[3]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4 /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/DependInfo.cmake --color=
+make[3]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+cd /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4 /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/src/lib_json /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/src/lib_json/CMakeFiles/jsoncpp_lib.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make -f src/lib_json/CMakeFiles/jsoncpp_lib.dir/build.make src/lib_json/CMakeFiles/jsoncpp_lib.dir/build
+make[3]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make -f src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/build.make src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/build
+make[3]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'src/lib_json/CMakeFiles/jsoncpp_lib.dir/build'.
+make[3]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make[3]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'src/lib_json/CMakeFiles/jsoncpp_lib_static.dir/build'.
+make[3]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+[ 50%] Built target jsoncpp_lib
+[100%] Built target jsoncpp_lib_static
+make[2]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu/CMakeFiles 0
+make -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "None"
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/jsoncpp.pc
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/lib/x86_64-linux-gnu/cmake/jsoncpp/jsoncppConfig.cmake
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/lib/x86_64-linux-gnu/cmake/jsoncpp/jsoncppConfig-none.cmake
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/lib/x86_64-linux-gnu/libjsoncpp.so.1.8.4
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/lib/x86_64-linux-gnu/libjsoncpp.so.19
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/lib/x86_64-linux-gnu/libjsoncpp.so
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/lib/x86_64-linux-gnu/libjsoncpp_static.a
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/allocator.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/assertions.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/autolink.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/config.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/features.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/forwards.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/json.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/reader.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/value.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/version.h
+-- Installing: /dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/debian/tmp/usr/include/json/writer.h
+make[1]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4/obj-x86_64-linux-gnu'
+   dh_install -O--parallel -O--buildsystem=cmake
+   dh_installdocs -O--parallel -O--buildsystem=cmake
+   dh_installchangelogs -O--parallel -O--buildsystem=cmake
+   dh_installexamples -O--parallel -O--buildsystem=cmake
+   dh_installman -O--parallel -O--buildsystem=cmake
+   dh_installcatalogs -O--parallel -O--buildsystem=cmake
+   dh_installcron -O--parallel -O--buildsystem=cmake
+   dh_installdebconf -O--parallel -O--buildsystem=cmake
+   dh_installemacsen -O--parallel -O--buildsystem=cmake
+   dh_installifupdown -O--parallel -O--buildsystem=cmake
+   dh_installinfo -O--parallel -O--buildsystem=cmake
+   dh_installinit -O--parallel -O--buildsystem=cmake
+   dh_installmenu -O--parallel -O--buildsystem=cmake
+   dh_installmime -O--parallel -O--buildsystem=cmake
+   dh_installmodules -O--parallel -O--buildsystem=cmake
+   dh_installlogcheck -O--parallel -O--buildsystem=cmake
+   dh_installlogrotate -O--parallel -O--buildsystem=cmake
+   dh_installpam -O--parallel -O--buildsystem=cmake
+   dh_installppp -O--parallel -O--buildsystem=cmake
+   dh_installudev -O--parallel -O--buildsystem=cmake
+   dh_installgsettings -O--parallel -O--buildsystem=cmake
+   dh_bugfiles -O--parallel -O--buildsystem=cmake
+   dh_ucf -O--parallel -O--buildsystem=cmake
+   dh_lintian -O--parallel -O--buildsystem=cmake
+   dh_gconf -O--parallel -O--buildsystem=cmake
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O--parallel -O--buildsystem=cmake
+   dh_perl -O--parallel -O--buildsystem=cmake
+   dh_usrlocal -O--parallel -O--buildsystem=cmake
+   dh_link -O--parallel -O--buildsystem=cmake
+   dh_installwm -O--parallel -O--buildsystem=cmake
+   dh_installxfonts -O--parallel -O--buildsystem=cmake
+   dh_strip_nondeterminism -O--parallel -O--buildsystem=cmake
+   dh_compress -O--parallel -O--buildsystem=cmake
+   dh_fixperms -O--parallel -O--buildsystem=cmake
+   dh_missing -O--parallel -O--buildsystem=cmake
+   dh_strip -O--parallel -O--buildsystem=cmake
+   debian/rules override_dh_makeshlibs
+make[1]: Entering directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4'
+dh_makeshlibs -V "libjsoncpp1 (>= 1.7.4)"
+make[1]: Leaving directory '/dev/shm/builddeps/libjsoncpp-dev/libjsoncpp-1.8.4'
+   dh_shlibdeps -O--parallel -O--buildsystem=cmake
+dpkg-shlibdeps: warning: deprecated use of LD_LIBRARY_PATH with private library directory which interferes with cross-building, please use -l option instead
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libjsoncpp1/usr/lib/x86_64-linux-gnu/libjsoncpp.so.1.8.4 was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/libjsoncpp1/usr/lib/x86_64-linux-gnu/libjsoncpp.so.1.8.4 was not linked against libpthread.so.0 (it uses none of the library's symbols)
+   dh_installdeb -O--parallel -O--buildsystem=cmake
+   dh_gencontrol -O--parallel -O--buildsystem=cmake
+   dh_md5sums -O--parallel -O--buildsystem=cmake
+   dh_builddeb -O--parallel -O--buildsystem=cmake
+dpkg-deb: building package 'libjsoncpp-doc' in '../libjsoncpp-doc_1.8.4-1_all.deb'.
+dpkg-deb: building package 'libjsoncpp1' in '../libjsoncpp1_1.8.4-1_amd64.deb'.
+dpkg-deb: building package 'libjsoncpp1-dbgsym' in '../libjsoncpp1-dbgsym_1.8.4-1_amd64.deb'.
+dpkg-deb: building package 'libjsoncpp-dev' in '../libjsoncpp-dev_1.8.4-1_amd64.deb'.
+FAKEROOTKEY=15141223 LD_LIBRARY_PATH=:/opt/intel/lib/intel64_lin:/opt/intel/tbb/lib/intel64/gcc4.7 LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libfakeroot/libfakeroot-sysv.so debian/rules binary
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../libjsoncpp_1.8.4-1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian libjsoncpp_1.8.4-1_amd64.changes ...
+W: libjsoncpp1: package-name-doesnt-match-sonames libjsoncpp19
+W: libjsoncpp1: spelling-error-in-description redeable readable
+W: libjsoncpp1: priority-extra-is-replaced-by-priority-optional
+W: libjsoncpp-dev: spelling-error-in-description redeable readable
+W: libjsoncpp-dev: priority-extra-is-replaced-by-priority-optional
+W: libjsoncpp-doc: spelling-error-in-description redeable readable
+W: libjsoncpp-doc: priority-extra-is-replaced-by-priority-optional
+N: 1 tag overridden (1 info); 1 unused override
+Finished running lintian.

@@ -1,0 +1,5 @@
+libjsoncpp-dev_1.8.4-1_amd64.deb libdevel extra
+libjsoncpp-doc_1.8.4-1_all.deb doc extra
+libjsoncpp1-dbgsym_1.8.4-1_amd64.deb debug optional automatic=yes
+libjsoncpp1_1.8.4-1_amd64.deb libs extra
+libjsoncpp_1.8.4-1_amd64.buildinfo libs extra

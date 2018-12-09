@@ -1,0 +1,13 @@
+Package: libjsoncpp1-dbgsym
+Source: libjsoncpp
+Version: 1.8.4-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Peter Spiess-Knafl <dev@spiessknafl.at>
+Installed-Size: 480
+Depends: libjsoncpp1 (= 1.8.4-1)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libjsoncpp1
+Build-Ids: 485c6b8a35ac5f101b0e97dfb3eed21ffd07f077
